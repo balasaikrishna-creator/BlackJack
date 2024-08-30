@@ -1,0 +1,53 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;
+    background-image: url("blackjack.png");
+    background-size: cover;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    height: 100;
+}
+
+.container {
+    background: silver;
+    max-width: 80%;
+    margin: auto;
+    border: 3px solid black;
+    border-radius: 10px;
+    
+}
+
+h1 {
+    color: rgb(37, 19, 102);
+}
+
+#message-el {
+    font-style: italic;
+}
+ 
+button {
+    color: rgb(37, 19, 102);
+    width: 150px;
+    background-color: goldenrod;
+    border: black;
+    border-radius: 2px;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+/* #new-game {
+    visibility: tr;
+    margin-left: 450px;
+    display: flex;
+    margin-top: 15px;
+} */
+
+button:disabled{
+    background-color: grey;   
+}
+
+p {
+    color: rgb(37, 19, 102);
+}
