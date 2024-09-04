@@ -14,6 +14,7 @@ let sumEL = document.getElementById("sum-el")
 let cardsEL = document.getElementById("cards-el")
 let playerEL = document.getElementById("player-el")
 let dealerSumEL = document.getElementById("dealer-sum-el")
+document.getElementById("new-game").style.display = "none"
 
 
 playerEL.textContent = player.name + ": $" + player.chips
@@ -54,7 +55,8 @@ function startGame() {
         renderGame()
     } else {
         document.getElementById("start-game").disabled = true;
-        messageEL.textContent = "You are out of chips! Can't play anymore!";  
+        messageEL.textContent = "You are out of chips! Can't play anymore!";
+        document.getElementById('new-game').style.display = 'flex'
     }
 }
 
@@ -81,7 +83,7 @@ function renderGame() {
         } else if (playerSum === 21) {
             message = "You've got Blackjack!"
             hasBlackJack = true
-            player.chips += 50
+            player.chips += 40
             playerEL.textContent = player.name + ": $" + player.chips
             document.getElementById("start-game").disabled = false;
             document.getElementById("new-card").disabled = true;
@@ -90,7 +92,7 @@ function renderGame() {
         } else {
             message = "You're out of the game!"
             isAlive = false
-            player.chips -= 50
+            player.chips -= 40
             playerEL.textContent = player.name + ": $" + player.chips;
             document.getElementById("start-game").disabled = false;
             document.getElementById("new-card").disabled = true;
@@ -165,4 +167,25 @@ function showCards() {
             cardsEL.textContent += playerCards[i] + " "
         }
     }
+}
+
+function newGame() {
+    sumEL.textContent = "Sum: "
+    isAlive = true
+    hasBlackJack = false
+    document.getElementById("start-game").disabled = false;
+    document.getElementById("new-card").disabled = true;
+    document.getElementById("surrender").disabled = true;
+    document.getElementById("show-cards").disabled = true;
+    sumEL.textContent = "Sum: "
+    dealerCards = []
+    playerCards = []
+    dealerSum = 0
+    playerSum = 0
+    messageEL.textContent = "Want to play a round?"
+    player.chips = 200;
+    cardsEL.textContent = "Cards: "
+    playerEL.textContent = player.name + ": $" + player.chips;
+    dealerSumEL.textContent = ""
+    document.getElementById('new-game').style.display = 'none'
 }
