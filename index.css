@@ -37,12 +37,16 @@ button {
     margin-bottom: 2px;
     margin-top: 2px;
 }
-/* #new-game {
-    visibility: tr;
-    margin-left: 450px;
+#new-game {
     display: flex;
-    margin-top: 15px;
-} */
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    margin-top: 16px;
+    margin-left: 540px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 28px;
+}
 
 button:disabled{
     background-color: grey;   
